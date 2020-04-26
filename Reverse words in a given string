@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t; cin>>t;
+	while(t--){
+	    string s; cin>>s;
+	    int i=s.size()-1;
+	    int j=i;
+	    while(i>=0){
+	        if(s[i]!='.')
+	                i--;
+	        else{
+	            for(int k=i+1;k<=j;k++)
+	                    cout<<s[k];
+	                cout<<s[i];
+	                j=i-1;
+	                i--;
+	        }
+	        if(i==-1)
+	            for(int k=i+1;k<=j;k++)
+	                    cout<<s[k];
+	    }
+	   
+	    cout<<endl;
+	}
+	return 0;
+}
