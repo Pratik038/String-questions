@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t; cin>>t;
+	while(t--){
+	    string a,b; cin>>a;
+	    cin.ignore();
+	    cin>>b;
+	    bool isAnagram = true;
+	    int al[256]={},bl[256]={};
+	    for(int i=0;i<a.size();i++)
+	        al[a[i]]++;
+	    for(int i=0;i<b.size();i++)
+	        bl[b[i]]++;
+	    for(int i=0;i<256;i++){
+	        if(al[i]!=bl[i]){
+	            isAnagram=false;
+	            break;
+	        }
+	    }
+	    if(isAnagram)
+	        cout<<"YES";
+	    else
+	        cout<<"NO";
+	    cout<<endl;
+	}
+	return 0;
+}
